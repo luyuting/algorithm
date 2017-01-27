@@ -2,10 +2,7 @@
 
 wstring Util::toWstring(const string& str) {
 
-#ifndef UTIL_SETLOCALE 
-#define UTIL_SETLOCALE 
-    setlocale(LC_ALL,"zh_CN.UTF-8");
-#endif // UTIL_SETLOCALE
+    setlocale(LC_ALL, "zh_CN.UTF-8");
 
     const char* _s = str.c_str();
     size_t _dSize = str.size() + 1;
