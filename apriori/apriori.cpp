@@ -294,7 +294,7 @@ int main() {
     }
     reader.close();
 
-    delete[] p;
+    // delete[] p;
 
     double support = 0.2;
     double confidence = 0.5;
@@ -310,5 +310,9 @@ int main() {
             << "\tconfidence: " << rit->second["confidence"] << endl;
         rit ++;
     }
+
+    delete apr;
+    apr = NULL;
+
     return 0;
 }
