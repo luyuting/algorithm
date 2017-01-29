@@ -227,6 +227,7 @@ int main() {
     reader.close();
 
     delete[] p;
+    p = NULL;
 
     vector<double> point;
     point.push_back(2);
