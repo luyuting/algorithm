@@ -179,11 +179,9 @@ int main() {
     string data;
 
     ifstream reader("dict.txt");
-    while (!reader.eof()) {
-        reader >> data;
+    while (getline(reader, data)) {
         keys.push_back(data);
     }
-    keys.pop_back();
     reader.close();
 
     string word = "protecting@环境卫生和服务质量，都很大程度地影响人们的点评结果和质量";

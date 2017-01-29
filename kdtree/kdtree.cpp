@@ -215,9 +215,8 @@ int main() {
     ifstream reader("points.txt");
     char* p;
     const char* splitChars = ",";
-    while (!reader.eof()) {
+    while (getline(reader, data)) {
         vector<double> coordinate;
-        reader >> data;
         p = strtok(const_cast<char*>(data.c_str()), splitChars);
         while (p != NULL) {
             coordinate.push_back(atof(p));
