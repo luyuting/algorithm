@@ -89,8 +89,7 @@ class DictSearch:
                        indexsMap[tmp.index] = True
                    tmp = tmp.trace
 
-        for k, v in indexsMap.items():
-            mappedKeys.append(self.__keys[k])
+        mappedKeys = [self.__keys[k] for k, v in indexsMap.items()]
 
         return mappedKeys
 
@@ -99,8 +98,8 @@ if __name__ == '__main__':
     keys = []
 
     with open('dict.txt') as f:
-        keys = [l.strip() for l in f]
-    keys = filter(lambda x: x, keys)
+        keys = [l.strip() for l in f if l]
+    # keys = filter(lambda x: x, keys)
 
     word = 'protecting@环境卫生和服务质量，都很大程度地影响人们的点评结果和质量';
 

@@ -210,13 +210,18 @@ class Apriori {
             return $v['value'];
         }, $pre_subset);
     }
-    /*
-    // 非递归获得真子集，二进制方式
+    
+    /**
+     * 非递归获得真子集，二进制方式
+     * @param array $set
+     * @return array
+     */
     private function getProperSubsetUnrecursive($set) {
         $total = 1;
         $size = count($set);
         $subset = [];
         for ($n = 0; $n ++ < $size; $total <<= 1);
+        $total --;
         for ($i = 1; $i < $total; $i ++) {
             $mask = $i;
             $subset[] = array_filter($set, function ($v) use (&$mask) {
@@ -226,7 +231,7 @@ class Apriori {
             });
         }
         return $subset;
-    }*/
+    }
    
     /**
      * 获得关联规则
