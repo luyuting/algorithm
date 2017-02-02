@@ -60,7 +60,7 @@ class KdTree:
         root = self.__createNode(coordinateVec)
         node = self.__createNode(root.getLeftVec())
         
-        self.root = root
+        self.__root = root
 
         nodeStack.append(root)
         while True:
@@ -95,7 +95,7 @@ class KdTree:
 
         trans = [[r[i] for r in coordinateVec] for i in range(dim)]
         avg = [sum(r) / size for r in trans]
-        var = [[(k - avg[i]) ** 2 for k in r] for r in trans] 
+        var = [sum([(k - avg[i]) ** 2 for k in r]) for r in trans] 
 
         for i, v in enumerate(var):
             if v > maxVar:
@@ -111,7 +111,7 @@ class KdTree:
     def search(self, coordinate):
         nodeStack = []
         leftVisitStack = []
-        node = self.root
+        node = self.__root
         nearest = None
         trace = False
         flag = True
