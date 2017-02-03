@@ -64,7 +64,6 @@ class DictSearch:
     def search(self, word):
         node = self.__root
         indexsMap = {}
-        mappedKeys = []
         word = word.decode('utf-8')
 
         for c in word:
