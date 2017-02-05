@@ -217,11 +217,8 @@ class Apriori {
      * @return array
      */
     private function getProperSubsetUnrecursive($set) {
-        $total = 1;
-        $size = count($set);
+        $total = (1 << count($set)) - 1;
         $subset = [];
-        for ($n = 0; $n ++ < $size; $total <<= 1);
-        $total --;
         for ($i = 1; $i < $total; $i ++) {
             $mask = $i;
             $subset[] = array_filter($set, function ($v) use (&$mask) {
